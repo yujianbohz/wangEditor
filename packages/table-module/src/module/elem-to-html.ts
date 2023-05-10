@@ -7,9 +7,9 @@ import { Element } from 'slate'
 import { TableCellElement, TableRowElement, TableElement } from './custom-types'
 
 function tableToHtml(elemNode: Element, childrenHtml: string): string {
-  const { width = 'auto' } = elemNode as TableElement
+  const { width = 'auto', className = '' } = elemNode as TableElement
 
-  return `<table style="width: ${width};"><tbody>${childrenHtml}</tbody></table>`
+  return `<table class="${className}" style="width: ${width};"><tbody>${childrenHtml}</tbody></table>`
 }
 
 function tableRowToHtml(elem: Element, childrenHtml: string): string {
